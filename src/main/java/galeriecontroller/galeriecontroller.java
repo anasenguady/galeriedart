@@ -17,14 +17,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping(path="/galeries/show")
 public class GalerieController {
     
-    // besoin du dao ==> @autowired : galerie repository
+    
     @Autowired
     private GalerieRepository galerieDAO;
     
     public String afficherGaleries(Model model){
-        List<Galerie> listeG = galerieDAO.findAll(); // revoie liste de galeries
+        List<Galerie> listeG = galerieDAO.findAll(); 
         model.addAttribute("listegaleries", listeG);
-        return "Listegaleries"; //page html
+        return "Listegaleries"; 
         
     }
     
