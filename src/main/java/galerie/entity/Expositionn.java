@@ -23,7 +23,7 @@ public class Personne {
     private String nom;
     
     @Column(unique=true)
-    @NonNull
+    
     private String adresse;
     
     @OneToMany(mappedBy="acheteur")
