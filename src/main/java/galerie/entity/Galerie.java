@@ -25,14 +25,11 @@ public class Galerie {
     // TODO : Mettre en oeuvre la relation oneToMany vers Exposition
     @OneToMany(mappedBy = "galerie")
     private List<Exposition> expositions = new LinkedList<>();
-    
-    
-    //should i use queries here ??
-    public float caAnnuel(int annee){
+    public float caAnnuel(int a){
         float ca = 0;
         for (Exposition expo : expositions){
             int debut = expo.getDebut().getYear();
-            if (debut == annee)
+            if (debut == a)
                 ca += expo.chiffreAffaires();
         }
         return ca;
